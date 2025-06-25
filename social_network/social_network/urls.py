@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from posts.views import news_feed, add_comment
 
 urlpatterns = [
+    path('', news_feed),
     path('admin/', admin.site.urls),
+    path(' /<int:post_id>/comments/', add_comment),
 ]
